@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ 
+ 
+ .App{ 
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+ }
+ .todo{  
+  width: 70vw;
+  display: flex; 
+  justify-content:  space-around; 
+  align-items: center;
+} 
+.container {    
+  font-size: 18px;
+  height: 80vh;
+  width: 350px;
+} 
+.form{  
+  font-size: 28px;
+  display:flex; 
+  flex-direction: column; 
+  justify-content: space-around; 
+  height: 18vh;
+ } 
+ .form input{ 
+    border-radius: 25px; 
+    border: none; 
+    padding: 15px 25px; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+    transition: all 0.2s ease-in;
+    
+ }   
 
-.App-link {
-  color: #61dafb;
+ 
+ .form input:focus,input:active{    
+outline: none  ;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }  
+ .image{ 
+  width: 20px;
+ }
+ .form button { 
+  font-size: 18px;
+  padding: 15px 25px; 
+  border-radius:25px; 
+  border:none; 
+   
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+  transition: all 0.2s ease-in;
+ } 
+ .form button:active { 
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+ } 
+ .title { 
+  font-size: 24px; 
+  font-weight: 700;
+ } 
+ .delete{ 
+  border-radius:5px; 
+  border:none;
+ } 
+ .tasks{   
+  display: flex; 
+  justify-content: space-between;
+  padding: 15px 15px 3px 15px;
+  border-bottom: 0.5px solid gray;
+ } 
+ .radio-button{ 
+  margin-right: 5px;
+ } 
+ .image{ 
+  background-color: transparent;
+ } 
+.input.green{  
+  position: relative;
+  border:1px solid  rgb(29, 108, 29) ; 
+  animation-name: bounce; 
+  animation-duration: .8s; 
+  animation-timing-function: ease-in; 
+  caret-shape: block;
+}  
+.input.red{  
+  position: relative;
+  border:1px solid red ;
+  animation-name:shake; 
+  animation-duration: .8s; 
+  animation-timing-function: ease-in;
+} 
+.input:focus,.input:active{ 
+  outline: none;
+}  
+.input.over{ 
+  border: 1px solid rgb(34, 123, 150);
+  color:rgb(34, 123, 150); 
+  caret-color: red; 
+  caret-shape: underscore;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+} 
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
 }
